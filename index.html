@@ -1,300 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Artist's Cut - Next Generation Music Distribution</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💿</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f0f0f;
-            color: #f3f4f6;
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .gold-text {
-            color: #d4af37;
-        }
-
-        .btn-primary {
-            background-color: #d4af37;
-            color: #000;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #b5922b;
-            transform: translateY(-2px);
-        }
-
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Artists Cut is building an AI-powered music-video creation platform for artists and the music industry." />
+  <title>The Artists Cut — AI Music Video Technology</title>
+  <style>
+    :root{--bg:#070707;--panel:#111;--text:#f6f5ef;--muted:#aaa9a1;--accent:#d8ff52;--line:#292929;--max:1180px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 78% 5%,rgba(216,255,82,.11),transparent 28%),var(--bg);color:var(--text);line-height:1.55}
+    a{text-decoration:none;color:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    nav{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{font-weight:900;letter-spacing:-.04em;font-size:1.15rem}.logo i{font-style:normal;color:var(--accent)}
+    .links{display:flex;gap:22px;align-items:center}.links>a:not(.pill){color:#d4d3cc;font-size:.94rem}
+    .pill{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 19px;border-radius:999px;background:var(--accent);color:#10100d;font-weight:800;border:1px solid var(--accent)}
+    .pill.alt{background:transparent;color:var(--text);border-color:#3b3b3b}.hero{padding:110px 0 88px;min-height:88vh;display:grid;align-items:center}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:58px;align-items:center}
+    .eyebrow{text-transform:uppercase;letter-spacing:.17em;font-size:.76rem;font-weight:900;color:var(--accent);margin-bottom:18px}h1,h2,h3{letter-spacing:-.045em}h1{font-size:clamp(3.4rem,8vw,7.7rem);line-height:.88;margin:0 0 24px;max-width:900px}h2{font-size:clamp(2.35rem,5vw,4.7rem);line-height:.96;margin:0 0 18px}h3{font-size:1.3rem;margin:0 0 8px}.lede{font-size:clamp(1.07rem,1.7vw,1.34rem);color:#c5c4bc;max-width:760px;margin:0 0 30px}.actions{display:flex;gap:12px;flex-wrap:wrap}
+    .product{border-radius:30px;border:1px solid var(--line);background:linear-gradient(180deg,#151515,#0d0d0d);padding:18px;box-shadow:0 30px 90px rgba(0,0,0,.36)}
+    .screen{min-height:580px;border-radius:24px;border:1px solid #282828;background:linear-gradient(180deg,rgba(216,255,82,.08),transparent 28%),#0a0a0a;padding:22px;display:flex;flex-direction:column;gap:18px}.topbar{display:flex;justify-content:space-between;font-size:.78rem;color:#aaa99f}
+    .preview{flex:1;border:1px solid #242424;border-radius:20px;padding:18px;background:linear-gradient(145deg,#1c1c1c,#0c0c0c);display:flex;align-items:flex-end;position:relative;overflow:hidden}.preview:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:var(--accent);filter:blur(90px);opacity:.17;right:-30px;top:30px}.preview-copy{position:relative;z-index:2}.preview-copy small{color:var(--accent);font-weight:800}.preview-copy h3{font-size:2rem;max-width:340px;margin-top:7px}.timeline{display:flex;gap:7px;height:52px}.clip{border-radius:8px;background:#222;flex:1;border:1px solid #303030}.clip.active{background:var(--accent);border-color:var(--accent)}.mode-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.mode{padding:11px 8px;border-radius:12px;background:#151515;border:1px solid #292929;font-size:.72rem;text-align:center;color:#bbb}.mode:first-child{border-color:rgba(216,255,82,.45);color:#e9ff99}.build-badge{padding:12px 14px;border-radius:14px;background:rgba(216,255,82,.08);border:1px solid rgba(216,255,82,.23);color:#ddff6d;text-align:center;font-weight:800;font-size:.9rem}
+    section{padding:100px 0}.head{max-width:780px;margin-bottom:46px}.head p{font-size:1.08rem;color:var(--muted);margin:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:27px;min-height:245px}.tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:900;margin-bottom:34px}.card p{color:var(--muted);margin:0}.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}.feature{background:#101010;border:1px solid var(--line);border-radius:22px;padding:25px}.feature span{display:block;color:var(--accent);font-size:.78rem;font-weight:900;margin-bottom:16px}.feature p{color:var(--muted);margin:0}.thesis{display:grid;grid-template-columns:1fr 1fr;gap:18px}.thesis>div{border-radius:28px;padding:38px}.problem{background:#111;border:1px solid var(--line)}.answer{background:var(--accent);color:#10100d}.answer .eyebrow{color:#10100d}.problem p,.answer p{font-size:1.08rem;margin:0}.problem p{color:var(--muted)}.answer p{color:#34342f}.stack{display:grid;gap:12px}.road{display:grid;grid-template-columns:115px 1fr;gap:24px;border-bottom:1px solid var(--line);padding:24px 0}.road b{color:var(--accent)}.road p{margin:0;color:var(--muted)}.investor{background:var(--accent);color:#111;border-radius:34px;padding:clamp(36px,7vw,74px)}.investor .eyebrow{color:#111}.investor p{max-width:760px;color:#34342f;font-size:1.09rem}.investor .pill{background:#111;color:#fff;border-color:#111;margin-top:14px}.note{margin-top:20px;font-size:.85rem;color:#4b4b45;max-width:820px}footer{border-top:1px solid var(--line);padding:28px 0 42px;color:#85857e}.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:900px){.hero-grid,.grid3,.feature-grid,.thesis{grid-template-columns:1fr}.links>a:not(.pill){display:none}.screen{min-height:500px}.road{grid-template-columns:1fr;gap:7px}}
+  </style>
 </head>
-<body class="antialiased">
-
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-black/90 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-3">
-                    <i class="fa-solid fa-record-vinyl text-3xl gold-text"></i>
-                    <span class="text-xl font-bold tracking-wider">THE ARTIST'S CUT</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#mission" class="hover:text-yellow-500 transition">Our Mission</a>
-                    <a href="#services" class="hover:text-yellow-500 transition">Services</a>
-                    <a href="#nextgensounds" class="hover:text-yellow-500 transition">Next Gen Sounds</a>
-                    <a href="#contact" class="hover:text-yellow-500 transition">Contact</a>
-                </div>
-                <div class="md:hidden">
-                    <button class="text-white hover:text-yellow-500">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-bg h-screen flex items-center justify-center text-center px-4 pt-20">
-        <div class="max-w-4xl mx-auto space-y-8 animate-fade-in-up">
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-                Your Music. <span class="gold-text">Your Money.</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
-                The Distributor for the Next Generation of Music. No fees. No subscriptions. A true 80/20 partnership for the hungry artist.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-                <button class="btn-primary px-8 py-4 rounded-full font-bold text-lg">
-                    Join The Movement
-                </button>
-                <a href="NextGenSounds/index.html" class="border border-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-bold text-lg transition flex items-center justify-center">
-                    Learn About Next Gen Sounds
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Problem / Solution -->
-    <section id="mission" class="py-24 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="space-y-6">
-                    <h2 class="text-4xl font-bold mb-6">Built on 40 Years of Hustle.</h2>
-                    <p class="text-gray-400 text-lg leading-relaxed">
-                        The old industry model is broken. Upfront fees, annual subscriptions, and charging per-track for basic tools like Content ID punish the most prolific creators.
-                    </p>
-                    <p class="text-gray-400 text-lg leading-relaxed">
-                        Founded by a 40-year industry veteran who's managed legends and lived the struggle, <strong>The Artist's Cut</strong> is the antidote. We don't see you as a user; we see you as a partner. We only make money when you do.
-                    </p>
-                    <div class="pt-4">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <i class="fas fa-check-circle gold-text text-xl"></i>
-                            <span class="text-lg">Zero Upfront Fees</span>
-                        </div>
-                        <div class="flex items-center space-x-4 mb-4">
-                            <i class="fas fa-check-circle gold-text text-xl"></i>
-                            <span class="text-lg">Free YouTube Content ID*</span>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <i class="fas fa-check-circle gold-text text-xl"></i>
-                            <span class="text-lg">Keep 100% of Your Rights</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-panel p-8 rounded-2xl relative">
-                    <div class="absolute -top-6 -right-6 bg-yellow-500 text-black font-bold px-6 py-2 rounded-lg transform rotate-3">
-                        The New Standard
-                    </div>
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-end border-b border-gray-700 pb-4">
-                            <div>
-                                <p class="text-sm text-gray-400 uppercase tracking-widest">Artist Revenue</p>
-                                <p class="text-3xl font-bold">80%</p>
-                            </div>
-                            <span class="text-green-400"><i class="fas fa-arrow-up"></i> Your Share</span>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-gray-700 pb-4">
-                            <div>
-                                <p class="text-sm text-gray-400 uppercase tracking-widest">Company Commission</p>
-                                <p class="text-3xl font-bold">20%</p>
-                            </div>
-                            <span class="text-gray-400">Our Partnership Fee</span>
-                        </div>
-                        <div class="flex justify-between items-end">
-                            <div>
-                                <p class="text-sm text-gray-400 uppercase tracking-widest">Hidden Fees</p>
-                                <p class="text-3xl font-bold text-gray-500">$0</p>
-                            </div>
-                            <span class="text-gray-500">Forever</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services & AI Angle -->
-    <section id="services" class="py-24 bg-black">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Built for the Future of Music</h2>
-                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
-                    Whether you craft your sound with a vintage guitar or a cutting-edge AI, we are the only home for the next generation of prolific creators.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="glass-panel p-8 rounded-xl hover:border-yellow-500 transition duration-300">
-                    <div class="h-12 w-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-globe text-black text-xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">Global Distribution</h3>
-                    <p class="text-gray-400">
-                        Unlimited releases to Spotify, Apple Music, TikTok, and 150+ stores worldwide. No per-track costs.
-                    </p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="glass-panel p-8 rounded-xl hover:border-yellow-500 transition duration-300">
-                    <div class="h-12 w-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-robot text-black text-xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">AI-Ready Scale</h3>
-                    <p class="text-gray-400">
-                        The only model built for AI pioneers with massive catalogs. Upload 1 or 1,000 tracks without going broke.
-                    </p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="glass-panel p-8 rounded-xl hover:border-yellow-500 transition duration-300">
-                    <div class="h-12 w-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-users text-black text-xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3">The Amplifier Network</h3>
-                    <p class="text-gray-400">
-                        Our proprietary community engine. Connect, collaborate, and cross-promote with other artists to boost your streams.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Next Gen Sounds Section (The Mission) -->
-    <section id="nextgensounds" class="py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-zinc-900 opacity-90"></div>
-        <!-- Abstract background pattern could go here -->
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-r from-yellow-600 to-yellow-800 rounded-3xl p-1">
-                <div class="bg-black rounded-[20px] p-8 md:p-16 text-center">
-                    <span class="text-yellow-500 font-bold tracking-widest uppercase mb-4 block">Our Social Mission</span>
-                    <h2 class="text-4xl md:text-6xl font-bold mb-8">NEXT GEN SOUNDS</h2>
-                    <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-10">
-                        We are bridging the digital divide. Next Gen Sounds is an experiential learning platform that trains underserved youth to run a real, fully operational digital music distribution company.
-                    </p>
-                    <div class="grid md:grid-cols-3 gap-8 text-left max-w-5xl mx-auto mb-12">
-                        <div class="flex items-start space-x-4">
-                            <i class="fas fa-laptop-code text-yellow-500 text-2xl mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-lg">High-Tech Skills</h4>
-                                <p class="text-gray-400 text-sm">Mastering AI music generation, metadata management, and platform operations.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <i class="fas fa-chart-line text-yellow-500 text-2xl mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-lg">Real Business</h4>
-                                <p class="text-gray-400 text-sm">Not a simulation. Teens run real campaigns, manage real assets, and learn financial literacy.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <i class="fas fa-hand-holding-heart text-yellow-500 text-2xl mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-lg">Opportunity Gap</h4>
-                                <p class="text-gray-400 text-sm">Providing a tangible pathway to the tech economy for those who need it most.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="https://nextgensounds.artistdist.com/" class="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition inline-block">
-                        Partner With Next Gen Sounds
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="bg-black border-t border-gray-800 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-2">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <i class="fa-solid fa-record-vinyl text-2xl gold-text"></i>
-                        <span class="text-lg font-bold tracking-wider">THE ARTIST'S CUT</span>
-                    </div>
-                    <p class="text-gray-500 max-w-md">
-                        A Delaware C-Corporation dedicated to empowering the artist. 
-                        Powered by a global infrastructure partnership with SonoSuite.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4 text-white">Platform</h4>
-                    <ul class="space-y-2 text-gray-500">
-                        <li><a href="#" class="hover:text-yellow-500">Artist Login</a></li>
-                        <li><a href="#" class="hover:text-yellow-500">Sign Up Free</a></li>
-                        <li><a href="#" class="hover:text-yellow-500">Amplifier Network</a></li>
-                        <li><a href="#" class="hover:text-yellow-500">FAQ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-4 text-white">Connect</h4>
-                    <ul class="space-y-2 text-gray-500">
-                        <li><a href="#" class="hover:text-yellow-500">Contact Support</a></li>
-                        <li><a href="https://nextgensounds.artistdist.com/" class="hover:text-yellow-500">Next Gen Sounds</a></li>
-                        <li><a href="#" class="hover:text-yellow-500">Instagram</a></li>
-                        <li><a href="#" class="hover:text-yellow-500">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
-                <p>&copy; 2025 The Artist's Cut Distribution Inc. All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-gray-400">Privacy Policy</a>
-                    <a href="#" class="hover:text-gray-400">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Simple smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+<body>
+<nav><div class="wrap nav"><a class="logo" href="#top">THE ARTISTS <i>CUT</i></a><div class="links"><a href="#product">Product</a><a href="#technology">Technology</a><a href="#vision">Vision</a><a class="pill" href="#investors">Investor Interest</a></div></div></nav>
+<main id="top">
+<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">AI music technology • product in development</div><h1>Turn music into a visual world.</h1><p class="lede">The Artists Cut is building an AI-powered music-video studio that gives creators one place to generate video, shape scenes, work on a timeline, analyze audio, and render finished visual content.</p><div class="actions"><a class="pill" href="#investors">Explore the Opportunity</a><a class="pill alt" href="#product">See the Product</a></div></div><div class="product" aria-label="Conceptual interface preview"><div class="screen"><div class="topbar"><span>THE ARTISTS CUT / STUDIO</span><span>PROJECT 01</span></div><div class="preview"><div class="preview-copy"><small>AI GENERATION</small><h3>Create the next scene from a prompt, an image, or the previous clip.</h3></div></div><div class="timeline"><div class="clip"></div><div class="clip active"></div><div class="clip"></div><div class="clip"></div></div><div class="mode-row"><div class="mode">TEXT → VIDEO</div><div class="mode">IMAGE → VIDEO</div><div class="mode">CONTINUE CLIP</div></div><div class="build-badge">Currently in development</div></div></div></div></section>
+<section id="product"><div class="wrap"><div class="head"><div class="eyebrow">The product</div><h2>A music-video workflow built around AI generation.</h2><p>The current editor brings core creation workflows into one browser-based environment, moving from audio and scene creation to timeline assembly and final rendering.</p></div><div class="grid3"><article class="card"><div class="tag">01 / Generate</div><h3>Text → Video</h3><p>Create a new audio/video clip directly from a text prompt, giving an artist a fast starting point for a visual concept.</p></article><article class="card"><div class="tag">02 / Animate</div><h3>Image → Video</h3><p>Use an uploaded reference frame as the visual starting point and turn it into a generated moving clip.</p></article><article class="card"><div class="tag">03 / Continue</div><h3>Clip → Next Clip</h3><p>Use the previous clip's final frame as the next clip's first frame to help creators build visual continuity.</p></article></div></div></section>
+<section id="technology"><div class="wrap"><div class="head"><div class="eyebrow">Current capabilities</div><h2>From raw audio to a rendered timeline.</h2><p>The current build combines media handling, AI generation, editing, and rendering so the workflow can stay centered on the creative project.</p></div><div class="feature-grid"><div class="feature"><span>AUDIO</span><h3>Audio analysis</h3><p>Analyze source audio as part of the project workflow and use it alongside the visual edit.</p></div><div class="feature"><span>EDITOR</span><h3>Timeline editing</h3><p>Arrange generated and uploaded media in a browser-based timeline before the final render.</p></div><div class="feature"><span>GENERATION</span><h3>LTX-2.3 video generation</h3><p>Generate short clips with synchronized audio through an open-weight LTX-2.3 workflow running on GPU infrastructure.</p></div><div class="feature"><span>OUTPUT</span><h3>Final rendering</h3><p>Render the completed timeline into finished video output after the creative sequence is assembled.</p></div></div></div></section>
+<section id="vision"><div class="wrap thesis"><div class="problem"><div class="eyebrow">The creative friction</div><h2>Music moves fast. Visual production often doesn't.</h2><p>Artists increasingly need compelling visual content, but traditional production workflows can involve separate tools, specialists, handoffs, and long iteration cycles.</p></div><div class="answer"><div class="eyebrow">The Artists Cut thesis</div><h2>Put more of the visual process in the artist's hands.</h2><p>Our direction is a creator-first studio where AI generation and conventional editing meet inside one product, giving artists a more direct path from musical idea to finished visual.</p></div></div></section>
+<section><div class="wrap"><div class="head"><div class="eyebrow">Build path</div><h2>Working product foundation. Broader platform ambition.</h2><p>The current software already defines the core workflow. The next phase is about refining the experience, validating creator use cases, and building outward from the studio.</p></div><div class="stack"><div class="road"><b>CURRENT</b><div><h3>Core AI music-video editor</h3><p>Browser editor, media storage, audio analysis, timeline editing, rendering, and LTX-based generation are wired into the current application.</p></div></div><div class="road"><b>NEXT</b><div><h3>Creator validation</h3><p>Refine the workflow around real artist needs, identify high-value creation patterns, and sharpen the product experience.</p></div></div><div class="road"><b>EXPAND</b><div><h3>Tools, education, and industry services</h3><p>Build the broader Artists Cut ecosystem around the core studio with complementary tools, learning, partnerships, and creator resources.</p></div></div></div></div></section>
+<section id="investors"><div class="wrap"><div class="investor"><div class="eyebrow">Investor opportunity</div><h2>Back a creator-first AI platform at the intersection of music and visual media.</h2><p>The Artists Cut is developing a working technology foundation for AI-assisted music-video creation. We are building toward a larger platform for artists and the music industry, beginning with a concrete, highly visual creator workflow.</p><a class="pill" href="#contact">Start an Investor Conversation</a><div class="note">This site intentionally does not state revenue, user, fundraising, valuation, or market-size figures that have not yet been provided.</div></div></div></section>
+<section id="contact" style="padding-top:0"><div class="wrap"><div class="card" style="min-height:auto"><div class="tag">Investor contact</div><h3>Add your investor contact or pitch-deck link here.</h3><p>Replace this placeholder before publishing with your preferred email address, scheduling link, pitch deck, or contact form.</p></div></div></section>
+</main>
+<footer><div class="wrap footer"><span>© <span id="year"></span> The Artists Cut</span><span>AI-powered music-video technology for creators.</span></div></footer><script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
