@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Amplifier Network - Connect. Collaborate. Grow.</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Rajdhani:wght@500;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .network-bg {
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+                linear-gradient(0deg, rgba(5,5,5,1) 0%, rgba(15,15,15,1) 100%);
+        }
+
+        .grid-overlay {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+
+        .gold-text {
+            color: #d4af37;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #b5922b 100%);
+            color: #000;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #d4af37;
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        /* Animation for connecting nodes */
+        @keyframes pulse-node {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+        .node-dot {
+            animation: pulse-node 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased network-bg">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/index.html" class="flex items-center space-x-3">
+                    <i class="fa-solid fa-bolt text-2xl gold-text"></i>
+                    <span class="text-xl font-bold tracking-wider">THE AMPLIFIER NETWORK</span>
+                </a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="/index.html" class="text-gray-400 hover:text-white transition text-sm font-semibold">Back to Main Site</a>
+                    <a href="#features" class="text-gray-400 hover:text-white transition text-sm font-semibold">Features</a>
+                    <a href="#join" class="px-5 py-2 btn-gold rounded-full font-bold text-sm">Join Beta</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 grid-overlay pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-block mb-4 px-4 py-1 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-500 text-xs font-bold tracking-widest uppercase">
+                Exclusive to The Artist's Cut
+            </div>
+            <h1 class="text-5xl md:text-8xl font-bold mb-8 leading-none tracking-tight">
+                Don't Just Distribute.<br>
+                <span class="gold-text">Amplify.</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+                The first social operating system for independent artists. 
+                We use AI and community power to turn your fellow artists into your promotion team.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#join" class="btn-gold px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-user-plus"></i> Create Artist Profile
+                </a>
+                <button class="px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition font-bold text-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-play"></i> How It Works
+                </button>
+            </div>
+
+            <!-- Visual Representation of Network -->
+            <div class="mt-20 relative max-w-4xl mx-auto h-64 md:h-96">
+                <!-- Center Node (You) -->
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+                    <div class="w-24 h-24 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.4)]">
+                        <i class="fas fa-user text-3xl text-black"></i>
+                    </div>
+                    <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-sm font-bold tracking-widest">YOU</div>
+                </div>
+
+                <!-- Connected Nodes -->
+                <div class="absolute top-1/4 left-1/4 w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur border border-white/20 node-dot" style="animation-delay: 0s;">
+                    <i class="fas fa-music text-gray-400"></i>
+                </div>
+                <div class="absolute top-1/3 right-1/4 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur border border-white/20 node-dot" style="animation-delay: 1s;">
+                    <i class="fas fa-microphone text-gray-400"></i>
+                </div>
+                <div class="absolute bottom-1/4 left-1/3 w-14 h-14 bg-white/10 rounded-full flex items-center justify-center backdrop-blur border border-white/20 node-dot" style="animation-delay: 2s;">
+                    <i class="fas fa-video text-gray-400"></i>
+                </div>
+
+                <!-- Connection Lines (SVG) -->
+                <svg class="absolute inset-0 w-full h-full -z-10" stroke="rgba(255,255,255,0.1)" stroke-width="1">
+                    <line x1="50%" y1="50%" x2="25%" y2="25%" />
+                    <line x1="50%" y1="50%" x2="75%" y2="33%" />
+                    <line x1="50%" y1="50%" x2="33%" y2="75%" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Proprietary Technology</h2>
+                <p class="text-gray-400">Built directly into your dashboard. No extra logins. No extra fees.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1: Page 2 Page -->
+                <div class="feature-card p-8 rounded-2xl relative group">
+                    <div class="absolute top-0 right-0 bg-yellow-500/20 text-yellow-500 text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">CORE TECH</div>
+                    <div class="w-14 h-14 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center text-2xl mb-6 text-black">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Page 2 Page™</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Our algorithm matches you with artists in your genre. You share their track, they share yours. It's automated, reciprocal cross-promotion that hacks the algorithm.
+                    </p>
+                    <div class="flex items-center text-xs text-gray-500">
+                        <i class="fas fa-check text-green-500 mr-2"></i> Guaranteed Impressions
+                    </div>
+                </div>
+
+                <!-- Feature 2: Collab Finder -->
+                <div class="feature-card p-8 rounded-2xl">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-2xl mb-6 text-white">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Collab Finder</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Stop DMing strangers. Find verified vocalists, producers, and AI-specialists within the network. Filter by style, location, and "RIYL" (Recommended If You Like) tags.
+                    </p>
+                    <div class="flex items-center text-xs text-gray-500">
+                        <i class="fas fa-check text-green-500 mr-2"></i> Verified Artists Only
+                    </div>
+                </div>
+
+                <!-- Feature 3: Smart Data -->
+                <div class="feature-card p-8 rounded-2xl">
+                    <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center text-2xl mb-6 text-white">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">AI Matchmaking</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        We analyze the sonic characteristics of your uploads to suggest the perfect tour mates, collaborators, and playlist placements within the community.
+                    </p>
+                    <div class="flex items-center text-xs text-gray-500">
+                        <i class="fas fa-check text-green-500 mr-2"></i> Sonic Analysis
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="join" class="py-24 border-t border-white/10">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-8">Ready to get <span class="gold-text">loud?</span></h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                The Amplifier Network is currently in private beta for artists distributed by The Artist's Cut. Join today to reserve your handle.
+            </p>
+            <form class="max-w-md mx-auto flex gap-2">
+                <input type="email" placeholder="Enter your email address" class="flex-1 bg-white/5 border border-white/20 rounded-full px-6 py-4 text-white focus:outline-none focus:border-yellow-500 transition">
+                <button class="btn-gold px-8 py-4 rounded-full font-bold whitespace-nowrap">
+                    Get Access
+                </button>
+            </form>
+            <p class="mt-6 text-xs text-gray-500">
+                By joining, you agree to participate in the Page 2 Page™ reciprocal sharing program.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="text-sm text-gray-500">
+                Powered by <a href="/index.html" class="text-gray-300 hover:text-white">The Artist's Cut Distribution Inc.</a>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-500 hover:text-white transition"><i class="fab fa-discord text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

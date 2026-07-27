@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Artist's Cut - Next Generation Music Distribution</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💿</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0f0f;
+            color: #f3f4f6;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gold-text {
+            color: #d4af37;
+        }
+
+        .btn-primary {
+            background-color: #d4af37;
+            color: #000;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #b5922b;
+            transform: translateY(-2px);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/90 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-record-vinyl text-3xl gold-text"></i>
+                    <span class="text-xl font-bold tracking-wider">THE ARTIST'S CUT</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#mission" class="hover:text-yellow-500 transition">Our Mission</a>
+                    <a href="#services" class="hover:text-yellow-500 transition">Services</a>
+                    <a href="#nextgensounds" class="hover:text-yellow-500 transition">Next Gen Sounds</a>
+                    <a href="#contact" class="hover:text-yellow-500 transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white hover:text-yellow-500">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center justify-center text-center px-4 pt-20">
+        <div class="max-w-4xl mx-auto space-y-8 animate-fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                Your Music. <span class="gold-text">Your Money.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
+                The Distributor for the Next Generation of Music. No fees. No subscriptions. A true 80/20 partnership for the hungry artist.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+                <button class="btn-primary px-8 py-4 rounded-full font-bold text-lg">
+                    Join The Movement
+                </button>
+                <a href="https://nextgensounds.artistdist.com/" class="border border-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-bold text-lg transition flex items-center justify-center">
+                    Learn About Next Gen Sounds
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem / Solution -->
+    <section id="mission" class="py-24 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold mb-6">Built on 40 Years of Hustle.</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        The old industry model is broken. Upfront fees, annual subscriptions, and charging per-track for basic tools like Content ID punish the most prolific creators.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Founded by a 40-year industry veteran who's managed legends and lived the struggle, <strong>The Artist's Cut</strong> is the antidote. We don't see you as a user; we see you as a partner. We only make money when you do.
+                    </p>
+                    <div class="pt-4">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i class="fas fa-check-circle gold-text text-xl"></i>
+                            <span class="text-lg">Zero Upfront Fees</span>
+                        </div>
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i class="fas fa-check-circle gold-text text-xl"></i>
+                            <span class="text-lg">Free YouTube Content ID*</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-check-circle gold-text text-xl"></i>
+                            <span class="text-lg">Keep 100% of Your Rights</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl relative">
+                    <div class="absolute -top-6 -right-6 bg-yellow-500 text-black font-bold px-6 py-2 rounded-lg transform rotate-3">
+                        The New Standard
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-end border-b border-gray-700 pb-4">
+                            <div>
+                                <p class="text-sm text-gray-400 uppercase tracking-widest">Artist Revenue</p>
+                                <p class="text-3xl font-bold">80%</p>
+                            </div>
+                            <span class="text-green-400"><i class="fas fa-arrow-up"></i> Your Share</span>
+                        </div>
+                        <div class="flex justify-between items-end border-b border-gray-700 pb-4">
+                            <div>
+                                <p class="text-sm text-gray-400 uppercase tracking-widest">Company Commission</p>
+                                <p class="text-3xl font-bold">20%</p>
+                            </div>
+                            <span class="text-gray-400">Our Partnership Fee</span>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <p class="text-sm text-gray-400 uppercase tracking-widest">Hidden Fees</p>
+                                <p class="text-3xl font-bold text-gray-500">$0</p>
+                            </div>
+                            <span class="text-gray-500">Forever</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & AI Angle -->
+    <section id="services" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Built for the Future of Music</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Whether you craft your sound with a vintage guitar or a cutting-edge AI, we are the only home for the next generation of prolific creators.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-panel p-8 rounded-xl hover:border-yellow-500 transition duration-300">
+                    <div class="h-12 w-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-black text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Global Distribution</h3>
+                    <p class="text-gray-400">
+                        Unlimited releases to Spotify, Apple Music, TikTok, and 150+ stores worldwide. No per-track costs.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-panel p-8 rounded-xl hover:border-yellow-500 transition duration-300">
+                    <div class="h-12 w-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-black text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">AI-Ready Scale</h3>
+                    <p class="text-gray-400">
+                        The only model built for AI pioneers with massive catalogs. Upload 1 or 1,000 tracks without going broke.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-panel p-8 rounded-xl hover:border-yellow-500 transition duration-300">
+                    <div class="h-12 w-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-black text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">The Amplifier Network</h3>
+                    <p class="text-gray-400">
+                        Our proprietary community engine. Connect, collaborate, and cross-promote with other artists to boost your streams.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Gen Sounds Section (The Mission) -->
+    <section id="nextgensounds" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-zinc-900 opacity-90"></div>
+        <!-- Abstract background pattern could go here -->
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-yellow-600 to-yellow-800 rounded-3xl p-1">
+                <div class="bg-black rounded-[20px] p-8 md:p-16 text-center">
+                    <span class="text-yellow-500 font-bold tracking-widest uppercase mb-4 block">Our Social Mission</span>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-8">NEXT GEN SOUNDS</h2>
+                    <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-10">
+                        We are bridging the digital divide. Next Gen Sounds is an experiential learning platform that trains underserved youth to run a real, fully operational digital music distribution company.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-8 text-left max-w-5xl mx-auto mb-12">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-laptop-code text-yellow-500 text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">High-Tech Skills</h4>
+                                <p class="text-gray-400 text-sm">Mastering AI music generation, metadata management, and platform operations.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-chart-line text-yellow-500 text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Real Business</h4>
+                                <p class="text-gray-400 text-sm">Not a simulation. Teens run real campaigns, manage real assets, and learn financial literacy.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-hand-holding-heart text-yellow-500 text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Opportunity Gap</h4>
+                                <p class="text-gray-400 text-sm">Providing a tangible pathway to the tech economy for those who need it most.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://nextgensounds.artistdist.com/" class="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition inline-block">
+                        Partner With Next Gen Sounds
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black border-t border-gray-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <i class="fa-solid fa-record-vinyl text-2xl gold-text"></i>
+                        <span class="text-lg font-bold tracking-wider">THE ARTIST'S CUT</span>
+                    </div>
+                    <p class="text-gray-500 max-w-md">
+                        A Delaware C-Corporation dedicated to empowering the artist. 
+                        Powered by a global infrastructure partnership with SonoSuite.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-white">Platform</h4>
+                    <ul class="space-y-2 text-gray-500">
+                        <li><a href="#" class="hover:text-yellow-500">Artist Login</a></li>
+                        <li><a href="#" class="hover:text-yellow-500">Sign Up Free</a></li>
+                        <li><a href="#" class="hover:text-yellow-500">Amplifier Network</a></li>
+                        <li><a href="#" class="hover:text-yellow-500">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-white">Connect</h4>
+                    <ul class="space-y-2 text-gray-500">
+                        <li><a href="#" class="hover:text-yellow-500">Contact Support</a></li>
+                        <li><a href="https://nextgensounds.artistdist.com/" class="hover:text-yellow-500">Next Gen Sounds</a></li>
+                        <li><a href="#" class="hover:text-yellow-500">Instagram</a></li>
+                        <li><a href="#" class="hover:text-yellow-500">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+                <p>&copy; 2025 The Artist's Cut Distribution Inc. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-400">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
