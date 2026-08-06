@@ -1,0 +1,30 @@
+THE ARTISTS CUT — CLOUDFLARE PAGES PACKAGE
+===========================================
+
+This folder contains the completed EZ WAY Products landing page.
+
+Included:
+- EZ-WAY SaaS
+- EZ AI Album Cover Studio
+- EZ AI Video Director
+- EZ Copyrights
+- Cory@cts-management.com
+- EZ WAY Products — Brand of the Future
+- Powered by CTS Management
+
+EASIEST CLOUDFLARE UPLOAD
+------------------------
+1. Sign in to your Cloudflare dashboard.
+2. Open Workers & Pages.
+3. Select Create application > Get started > Drag and drop your files.
+4. Enter your project name.
+5. Upload the ZIP file or this entire folder.
+6. Select Deploy site.
+
+IMPORTANT
+---------
+Upload all files together. Keep the assets folder beside index.html.
+No database, server, AWS resources, or monthly application runtime is required.
+
+Official Cloudflare instructions:
+https://developers.cloudflare.com/pages/get-started/direct-upload/
